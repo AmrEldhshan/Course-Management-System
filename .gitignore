@@ -1,0 +1,78 @@
+# =========================================================================
+# Maven Build Outputs (Spring Boot Modules)
+# =========================================================================
+**/target/
+**/out/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+pom.xml.preview
+pom.xml.multiModuleProjectDirectory
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+# لو مش عايز ترفع إعدادات المافن الخاصة بالجهاز
+.mvn/wrapper/maven-wrapper.jar
+
+# =========================================================================
+# Frontend / NodeJS (For frontend/public apps if applicable)
+# =========================================================================
+**/node_modules/
+**/dist/
+**/build/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# =========================================================================
+# IDEs & Editors Configuration
+# =========================================================================
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+cmake-build-*/
+
+# Eclipse
+.settings/
+.classpath
+.project
+.factorypath
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# NetBeans
+**/nbproject/private/
+**/nbbuild/
+**/dist/
+**/nbproject/spring-beans.xml
+
+# =========================================================================
+# Operating System & Temporary Files
+# =========================================================================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Logs
+*.log
+logs/
+temp/

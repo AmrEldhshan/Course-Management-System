@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Course Management System</h1>
+    <nav>
+      <button class="tab-btn active" data-tab="public-view">Student View</button>
+      <button class="tab-btn" data-tab="admin-view">Admin View</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ================= PUBLIC / STUDENT VIEW ================= -->
+    <section id="public-view" class="tab-panel active">
+      <h2>Available Courses</h2>
+      <button id="refreshPublicCourses" class="secondary-btn">Refresh</button>
+      <div id="publicCoursesList" class="course-grid"></div>
+
+      <div class="modal-backdrop" id="enrollModalBackdrop">
+        <div class="modal">
+          <h3>Enroll in <span id="enrollCourseTitle"></span></h3>
+          <form id="enrollForm">
+            <label>
+              Your name
+              <input type="text" id="studentName" required placeholder="e.g. Amr Khaled">
+            </label>
+            <div class="modal-actions">
+              <button type="button" id="cancelEnroll" class="secondary-btn">Cancel</button>
+              <button type="submit" class="primary-btn">Enroll</button>
+            </div>
+          </form>
+          <p id="enrollMessage" class="message"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ADMIN VIEW ================= -->
+    <section id="admin-view" class="tab-panel">
+      <h2>Create a New Course</h2>
+      <form id="createCourseForm" class="course-form">
+        <label>
+          Title
+          <input type="text" id="title" required placeholder="e.g. Intro to Spring Boot">
+        </label>
+        <label>
+          Description
+          <textarea id="description" rows="2" placeholder="Short description"></textarea>
+        </label>
+        <label>
+          Instructor Name
+          <input type="text" id="instructorName" placeholder="e.g. Dr. Ahmed">
+        </label>
+        <div class="form-row">
+          <label>
+            Registration Start
+            <input type="datetime-local" id="registrationStartTime" required>
+          </label>
+          <label>
+            Registration End
+            <input type="datetime-local" id="registrationEndTime" required>
+          </label>
+        </div>
+        <button type="submit" class="primary-btn">Create Course</button>
+        <p id="createMessage" class="message"></p>
+      </form>
+
+      <h2>All Courses (Admin)</h2>
+      <button id="refreshAdminCourses" class="secondary-btn">Refresh</button>
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Instructor</th>
+            <th>Registration Window</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="adminCoursesTableBody"></tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Admin API: <code id="adminApiUrl"></code> &nbsp;|&nbsp; Public API: <code id="publicApiUrl"></code></p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
